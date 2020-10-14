@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>DetaljerMH</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+
+    <h1 style="margin-left: 40%; margin-top: 3%;">Bil detaljer</h1>
+    <div class="wrapper" id="wrapper-view">
+
+    <table>
+        <thead>
+            <tr>
+            <th>Bil ID</th>
+            <th>Bil mærke</th>
+            <th>Bil model</th>
+            <th>Antal senge</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <td th:text="${cars.car_id}" />
+        <td th:text="${cars.brand}" />
+        <td th:text="${cars.model}" />
+        <td th:text="${cars.beds}" />
+        </tr>
+        </tbody>
+
+        <thead>
+            <tr>
+            <th>Bil dokumentation ID</th>
+            <th>Status på bilen</th>
+            <th>Bil registering</th>
+            <th>Antal kilometer kørt</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <td th:text="${cars.documentation_id}" />
+        <td th:text="${cars.car_status}" />
+        <td th:text="${cars.car_registration}" />
+        <td th:text="${cars.mileage}" />
+        </tr>
+        </tbody>
+    </table>
+
+    </div>
+</body>
+</html>

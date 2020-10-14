@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>DetaljerStaff</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+
+    <h1 style="margin-left: 40%; margin-top: 3%;">Medarbejder detaljer</h1>
+    <div class="wrapper" id="wrapper-view">
+
+    <table>
+        <thead>
+            <tr>
+            <th>Medarbejder ID</th>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <td th:text="${staff_id}" />
+        <td th:text="${staff.staff_first_name}" />
+        <td th:text="${staff.staff_last_name}" />
+        </tbody>
+
+        <thead>
+            <tr>
+            <th>Gade</th>
+            <th>Hus nummer</th>
+            <th>By</th>
+            <th>Postnummer</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <td th:text="${staff.street}" />
+        <td th:text="${staff.house_num}" />
+        <td th:text="${staff.city}" />
+        <td th:text="${staff.zip_code}" />
+        </tbody>
+
+    </table>
+    </div>
+
+</body>
+</html>

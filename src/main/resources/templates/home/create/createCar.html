@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpretMH</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+    <h1 style="margin-left: 40%; margin-top: 3%;">Opret ny motorhome</h1>
+    <div class="wrapper" id="wrapper-create">
+        <div class="content" id="content-create">
+            <form action="createCar" method="post">
+
+                <label>Motorhome mærke:</label>
+                <input style="float:right;" type="text" name="brand" placeholder="Fiat" pattern="(?=.*[a-z])(?=.*[A-Z]).{2,}" title="Start med stor og min. 2 bogstaver!">
+                <br><hr class="line">
+
+                <label>Motorhome model:</label>
+                <input style="float:right;" type="text" name="model" placeholder="Multipla">
+                <br><hr class="line">
+
+                <label>Antal senge:</label>
+                <input style="float:right;" type="number" name="beds" placeholder="4" pattern="((?=.*\d).{1,}}" title="Indtast min. 1 tal">
+                <br><hr class="line">
+
+                <label>Status på motorhome:</label>
+                <select style="float: right; width: 162px;" id="car_id" name="car_status">
+                    <option label="Select .." value="NONE"></option>
+                    <option value="Available">Available</option>
+                    <option value="Reperation">Reperation</option>
+                    <option value="Unavailable">Unavailable</option>
+                </select>
+
+                <br><hr class="line">
+
+                <label>Motorhome registerrings nummer:</label>
+                <input style="float:right;" type="text" name="car_registration" placeholder="01010101" pattern="((?=.*\d).{7,}}" title="Indtast min. 7 tal">
+                <br><hr class="line">
+
+                <label>Antal kilometer kørt:</label>
+                <input style="float:right;" type="number" name="mileage" placeholder="101010" pattern="((?=.*\d).{1,}}" title="Indtast min. 1 tal">
+                <br><hr class="line">
+
+                <label>Price id:</label>
+                <select style="float: right; width: 162px;" id="car_id" name="price_id">
+                    <option label="Select .." value="NONE"></option>
+                    <option value="1">1 (2 senge)</option>
+                    <option value="2">2 (4 senge)</option>
+                    <option value="3">3 (6 senge)</option>
+                </select>
+                <br><hr class="line">
+
+                <input style="background-color: cyan; float: right;" type="submit" value="Opret motorhome">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

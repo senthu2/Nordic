@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>OpdaterKunde</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+    <h1 style="margin-left: 40%; margin-top: 3%;"> Opdater kunden:</h1>
+    <div class="wrapper" id="wrapper-view">
+        <div class="content" id="content-create">
+
+            <form action="/updateCustomerUp" method="post">
+
+        <h1>Opdater kunden</h1>
+            <hr class="line">
+
+            <input type="hidden" name="customer_id" th:value="${customer.customer_id}">
+
+            <label>Skift fornavn:</label>
+            <input style="float: right" type="text" name="cus_first_name" th:value="${customer.cus_first_name}">
+            <br><hr class="line">
+
+            <label>Skift efternavn:</label>
+            <input style="float: right" type="text" name="cus_last_name" th:value="${customer.cus_last_name}">
+            <br><hr class="line">
+
+        <h1>Opdater address</h1>
+            <hr class="line">
+
+            <label>Skift Gade:</label>
+            <input style="float: right" type="text" name="street" th:value="${customer.street}">
+            <br><hr class="line">
+
+            <label>Skift hus nummer:</label>
+            <input style="float: right" type="text" name="house_num" th:value="${customer.house_num}">
+            <br><hr class="line">
+
+        <h1>Opdater lokation</h1>
+            <hr class="line">
+
+            <label>Skift by:</label>
+            <input style="float: right" type="text" name="city" th:value="${customer.city}">
+            <br><hr class="line">
+
+            <label>Skift postnummer:</label>
+            <input style="float: right" type="text" name="zip_code" th:value="${customer.zip_code}">
+            <br><hr class="line">
+
+        <h1>Opdater dok</h1>
+            <hr class="line">
+
+            <label>Skift kørekortnummer:</label>
+            <input style="float: right" type="text" name="driver_licence" th:value="${customer.driver_licence}">
+            <br><hr class="line">
+
+            <input style="float: right"  type="submit" value="Gem ændringer">
+
+            <br><br>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

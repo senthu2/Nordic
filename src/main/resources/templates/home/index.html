@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MH Rentals</title> <!-- browser tab title -->
+    <link rel="stylesheet" type="text/css" href="/NMP.css"> <!-- telling page to use css file style -->
+</head>
+
+<body>
+    <h1><img id="top" src="images/motorhomeheader.png"></h1>
+
+    <!-- Adds rental, motorhomes, kunder and medarbejder tabs, each with unique content -->
+    <div class="mar"><button class="tablink" onclick="openPage('Rental', this, 'green')" id="defaultOpen">Rental</button></div>
+    <button class="tablink" onclick="openPage('Cars', this, 'green')">Motorhomes</button>
+    <button class="tablink" onclick="openPage('Customers', this, 'green')">Kunder</button>
+    <button class="tablink" onclick="openPage('Staff', this, 'green')">Medarbejder</button>
+
+    <!-- Here starts rental tab -->
+    <div id="Rental" class="tabcontent">
+        <!-- Here starts rental content -->
+        <h1>WELCOME TO NORDIC MOTORHOME RENTAL!!!</h1>
+        <table>
+        <thead>
+        <tr>
+            <!-- Table header with tiles -->
+            <th>Rental ID</th>
+            <th>Dok ID</th>
+            <th>Cos ID</th>
+            <th>Antal dage</th>
+            <th>Total pris</th>
+            <th>KM-antal</th>
+            <th>Pick up Point</th>
+
+            <!-- Create button -->
+            <th><a href="/createRental"><button class="btn-create" id="btn-create">Opret ny udlejning</button></a></th>
+        </tr>
+        </thead>
+
+            <!-- table content -->
+        <tbody>
+        <tr th:each="rent: ${rentals}">
+            <td th:text="${rent.rental_id}">
+            <td th:text="${rent.documentation_id}">
+            <td th:text="${rent.customer_id}">
+            <td th:text="${rent.days_of_rental}">
+            <td th:text="${rent.total_price}">
+            <td th:text="${rent.mileage}">
+            <td th:text="${rent.PickUP_id}">
+
+        <td>
+
+            <!-- Buttons -->
+            <a th:href="@{'/viewOne/'+${rent.rental_id}}">
+                <button class="btn-viewOne", id="btn-viewOne">Se detaljer</button>
+            </a>
+
+            <a th:href="@{'/deleteRental/'+${rent.rental_id}}">
+                <button class="btn-delete", id="btn-delete">Slet udlejning</button>
+            </a>
+
+            <a th:href="@{'/returnering/'+${rent.rental_id}}">
+                <button class="btn-return", id="btn-return">Aflevering af motorhome</button>
+            </a>
+            <a th:href="@{'/cancelRental/'+${rent.rental_id}}">
+                <button class="btn-update", id="btn-cancel">Cancel rental</button>
+            </a>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <!-- Here starts cars tab -->
+    <div id="Cars" class="tabcontent">
+        <h1>Motorhome liste</h1>
+        <table>
+        <thead>
+        <tr>
+            <th>Bil ID</th>
+            <th>Mærke</th>
+            <th>Model</th>
+            <th>Antal senge</th>
+            <th>Price id</th>
+
+            <th><a href="/createCar"><button class="btn-create" id="btn-create">Opret ny motorhome</button></a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cars: ${cars}">
+        <td th:text="${cars.car_id}"/>
+        <td th:text="${cars.brand}"/>
+        <td th:text="${cars.model}"/>
+        <td th:text="${cars.beds}"/>
+        <td th:text="${cars.price_id}"/>
+
+        <td>
+            <a th:href="@{'/viewOneCar/'+${cars.car_id}}">
+                <button class="btn-viewOne", id="btn-viewOne">Se motorhome</button>
+            </a>
+            <a th:href="@{'/deleteCar/'+${cars.car_id}}">
+                <button class="btn-delete", id="btn-delete">Slet motorhome</button>
+            </a>
+            <a th:href="@{'/updateCar/'+${cars.car_id}}">
+                <button class="btn-update", id="btn-update">Opdater motorhome</button>
+            </a>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <!-- Here starts customer tab -->
+    <div id="Customers" class="tabcontent">
+        <h1>Kunder</h1>
+        <table>
+        <thead>
+        <tr>
+            <th>Kunde ID</th>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+
+            <th><a href="/createCustomer"><button class="btn-create" id="btn-create">Opret en kunde</button></a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer: ${customers}">
+        <td th:text="${customer.customer_id}"/>
+        <td th:text="${customer.cus_first_name}"/>
+        <td th:text="${customer.cus_last_name}"/>
+
+        <td>
+            <a th:href="@{'/viewOneCustomer/'+${customer.customer_id}}">
+                <button class="btn-viewOne", id="btn-viewOne">Se kunden</button>
+            </a>
+            <a th:href="@{'/deleteCustomer/'+${customer.customer_id}}">
+                <button class="btn-delete", id="btn-delete">Slet kunden</button>
+            </a>
+            <a th:href="@{'/updateCustomer/'+${customer.customer_id}}">
+                <button class="btn-update", id="btn-update">Opdater kunden</button>
+            </a>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <!-- Here starts staff tab -->
+    <div id="Staff" class="tabcontent">
+        <h1>Medarbejder</h1>
+        <table>
+        <thead>
+        <tr>
+            <th>Medarbejder ID</th>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+
+            <th><a href="/createStaff"><button class="btn-create" id="btn-create">Opret ny medarbejder</button></a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="staff: ${staff}">
+        <td th:text="${staff.staff_id}" />
+        <td th:text="${staff.staff_first_name}" />
+        <td th:text="${staff.staff_last_name}" />
+
+        <td>
+            <a th:href="@{'/viewOneStaff/'+${staff.staff_id}}">
+                <button class="btn-viewOne", id="btn-viewOne">Se medarbejderen</button>
+            </a>
+            <a th:href="@{'/deleteStaff/'+${staff.staff_id}}">
+                <button class="btn-delete", id="btn-delete">Slet medarbejderen</button>
+            </a>
+            <a th:href="@{'/updateStaff/'+${staff.staff_id}}">
+                <button class="btn-update", id="btn-update">Opdater medarbejderen</button>
+            </a>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        // JavaScript
+
+        // Tablinks
+        function openPage(pageName,elmnt,color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+</html>

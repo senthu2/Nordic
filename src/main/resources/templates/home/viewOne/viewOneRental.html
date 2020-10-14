@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>DetaljerRental</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+
+    <h1 style="margin-left: 40%; margin-top: 3%;">Udlejning detaljer</h1>
+    <div class="wrapper" id="wrapper-view">
+
+    <table>
+        <thead>
+            <tr>
+            <th>Rental ID</th>
+            <th>Dok ID</th>
+            <th>Kunde ID</th>
+            <th>Dato fra</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <td th:text="${rent.rental_id}"/>
+        <td th:text="${rent.documentation_id}"/>
+        <td th:text="${rent.customer_id}"/>
+        <td th:text="${rent.from_Date}"/>
+        </tbody>
+
+        <thead>
+            <tr>
+            <th>Dato til</th>
+            <th>Antal af dage</th>
+            <th>Fuld pris</th>
+            <th>Picnic bord</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <td th:text="${rent.to_Date}"/>
+        <td th:text="${rent.days_of_rental}"/>
+        <td th:text="${rent.total_price}"/>
+        <td th:text="${rent.rent_table}"/>
+        </tbody>
+
+        <thead>
+            <tr>
+            <th>Stole</th>
+            <th>Børne sædler</th>
+            <th>Cykelholder</th>
+            <th>Sengetøj</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <td th:text="${rent.rent_chairs}"/>
+        <td th:text="${rent.rent_car_seat}"/>
+        <td th:text="${rent.rent_bike_rack}"/>
+        <td th:text="${rent.rent_bed_linnen}"/>
+        </tbody>
+
+        <thead>
+            <tr>
+            <th>PickUp point:</th>
+            <th>Drop off point:</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <td th:text="${pickUp.place}"/>
+        <td th:text="${dropOf.place}"/>
+        </tbody>
+
+    </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>DetaljerKunde</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+
+    <h1 style="margin-left: 40%; margin-top: 3%;">Kunde detaljer</h1>
+    <div class="wrapper" id="wrapper-view">
+
+    <table>
+        <thead>
+            <tr>
+            <th>Kunde ID</th>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+            <th>Kørekort</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <td th:text="${customer.customer_id}"/>
+        <td th:text="${customer.cus_first_name}"/>
+        <td th:text="${customer.cus_last_name}"/>
+        <td th:text="${customer.driver_licence}"/>
+        </tbody>
+
+        <thead>
+            <tr>
+            <th>Gade</th>
+            <th>Hus nummer</th>
+            <th>By</th>
+            <th>Postnummer</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <td th:text="${customer.street}"/>
+        <td th:text="${customer.house_num}"/>
+        <td th:text="${customer.city}"/>
+        <td th:text="${customer.zip_code}"/>
+        </tbody>
+    </table>
+    </div>
+
+</body>
+</html>

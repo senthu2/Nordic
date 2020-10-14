@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>OpdaterMH</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+    <h1 style="margin-left: 40%; margin-top: 3%;">Opdater motorhome</h1>
+    <div class="wrapper" id="wrapper-view">
+        <div class="content" id="content-create">
+
+            <form action="/updateCarUp" method="post">
+            <h1>Edit documetation</h1>
+            <hr class="line">
+
+            <input type="hidden" name="car_id" th:value="${cars.car_id}">
+            <label>Skift mærke:</label>
+            <input style="float: right;" type="text" name="brand" th:value="${cars.brand}">
+            <br><hr class="line">
+
+            <label>Skift model:</label>
+            <input style="float: right;" type="text" name="model" th:value="${cars.model}">
+            <br><hr class="line">
+
+            <label>Skift antal af senge:</label>
+            <input style="float: right;" type="text" name="beds" th:value="${cars.beds}">
+            <br><hr class="line">
+
+        <h1>Edit documetation</h1>
+            <hr class="line">
+
+            <label>Skift status på motorhome:</label>
+            <input style="float: right;" type="text" name="car_status" th:value="${cars.car_status}">
+            <br><hr class="line">
+
+            <label>Skift registerings nummer:</label>
+            <input style="float: right;" type="text" name="car_registration" th:value="${cars.car_registration}">
+            <br><hr class="line">
+
+            <label>Skift antal af kilometer kørt:</label>
+            <input style="float: right;" type="number" name="mileage" th:value="${cars.mileage}">
+            <br><hr class="line">
+
+            <label>Price id:</label>
+            <input style="float: right;" type="number" name="price_id" th:value="${cars.price_id}">
+            <br><hr class="line">
+
+            <input style="float: right;" type="submit" value="Gem ændringer">
+
+            <br><br>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

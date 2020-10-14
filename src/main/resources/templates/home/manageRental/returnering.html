@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Aflevering af motor home</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+<div class="wrapper" id="wrapper-rental">
+    <div class="content" id="content-create">
+    <h1 style="margin-left: 30%; margin-top: 3%;">Returnering af motorhome</h1>
+
+    <br><br>
+
+    <form action="/returnerBil/" method="post">
+        <input type="hidden" name="rental_id" th:value="${rental.rental_id}"/>
+        <input type="text" name="documentation_id" th:value="${rental.documentation_id}"/>
+        <input type="text" name="total_price" th:value="${rental.total_price}"/>
+        <input type="text" name="days_of_rental" th:value="${rental.days_of_rental}"/>
+
+        <br><hr class="line">
+
+        <input type="hidden" name="mileage" th:value="${rental.mileage}"/>
+
+        <div> Motorhome nummerplade <p th:text="${car.car_registration}"/>
+        </div>
+
+        <hr class="line">
+
+        <label>Er bilens tank mere end halvt fyldt?</label><br>
+        <input type="radio" name="tank_Filled"  id="yes" value="1">
+        <label>Ja</label>
+        <input type="radio" name="tank_Filled" id="no"  value="0">
+        <label for="no">Nej</label><br>
+
+        <hr class="line">
+
+        <label>Angiv nyt KM antal</label>
+        <input type="number" name="overDriven">
+        <br><br>
+
+        <label></label>
+
+        <br><br>
+
+        <input type="submit" value="Afslut udlejning">
+    </form>
+    </div>
+</div>
+</body>
+</html>

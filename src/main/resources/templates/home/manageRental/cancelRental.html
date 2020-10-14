@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>CancelRent</title> <!-- browser tab title -->
+    <link rel="stylesheet" type="text/css" href="/NMP.css"> <!-- telling page to use css file style -->
+</head>
+
+<body>
+<div class="wrapper" id="wrapper-view">
+    <h1 style="text-align: center;">Cancel rental</h1>
+    <div class="content" id="content-cancel">
+
+        <label>Rental ID:</label>
+        <div style="float: right" th:text="${rental.rental_id}"/>
+        <br><hr class="line">
+
+        <label>Dok ID:</label>
+        <div style="float: right" th:text="${rental.documentation_id}"/>
+        <br><hr class="line">
+
+        <label>Kunde ID:</label>
+        <div style="float: right" th:text="${rental.customer_id}"/>
+        <br><hr class="line">
+
+        <label>Dato fra:</label>
+        <div style="float: right" th:text="${rental.from_Date}"/>
+        <br><hr class="line">
+
+        <label>Dato til:</label>
+        <div style="float: right" th:text="${rental.to_Date}"/>
+        <br><hr class="line">
+
+        <label>Antal dage:</label>
+        <div style="float: right" th:text="${rental.days_of_rental}"/>
+        <br><hr class="line">
+
+        <label>Pris:</label>
+        <div style="float: right" th:text="${rental.total_price}"/>
+        <br><hr class="line">
+
+        <label>Picnic bord:</label>
+        <div style="float: right" th:text="${rental.rent_table}"/>
+        <br><hr class="line">
+
+        <label>Stole:</label>
+        <div style="float: right" th:text="${rental.rent_chairs}"/>
+        <br><hr class="line">
+
+        <label>Børne sædler:</label>
+        <div style="float: right" th:text="${rental.rent_car_seat}"/>
+        <br><hr class="line">
+
+        <label>Cykelholder:</label>
+        <div style="float: right" th:text="${rental.rent_bike_rack}"/>
+        <br><hr class="line">
+
+        <label>Sengetøj:</label>
+        <div style="float: right" th:text="${rental.rent_bed_linnen}"/>
+        <br><hr class="line">
+
+        <label>Cancelation dage før rental:</label>
+        <br>
+        <div th:text="${cancel.cancel_Date}"/>
+        <br>
+
+        <label>Cancelation faktor:</label>
+        <p>X.X</p>
+        <br><hr class="line">
+        <label>Total price:</label>
+        <div style="float: right" th:text="${rentalUP.total_price}"/>
+
+        <br><br>
+
+        <div style="float: right">
+        <a th:href="@{'/cancelRentalUp/'+${rental.rental_id}}">
+            <button class="btn-update", id="btn-cancel">Cancel rental</button>
+        </a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

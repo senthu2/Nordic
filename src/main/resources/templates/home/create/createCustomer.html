@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpretKunde</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+    <h1 style="margin-left: 40%; margin-top: 3%;">Opret ny kunde</h1>
+    <div class="wrapper" id="wrapper-create">
+        <div class="content" id="content-create">
+            <form action="createCustomer" method="post">
+
+                <label>Fornavn:</label>
+                <input style="float:right;" type="text" name="cus_first_name" placeholder="Anders" pattern="(?=.*[a-z])(?=.*[A-Z]).{2,}" title="Start med stor og min. 2 bogstaver!">
+                <br><hr class="line">
+
+                <label>Efternavn:</label>
+                <input style="float:right;" type="text" name="cus_last_name" placeholder="And" pattern="(?=.*[a-z])(?=.*[A-Z]).{2,}" title="Start med stor og min. 2 bogstaver!">
+                <br><hr class="line">
+
+                <label>Kørekort:</label>
+                <input style="float:right;" type="text" name="driver_licence" placeholder="01010101" pattern="((?=.*\d).{7,}}" title="Indtast min. 7 tal">
+                <br><hr class="line">
+
+                <label>Gade:</label>
+                <input style="float:right;" type="text" name="street" placeholder="Andegade" pattern="(?=.*[a-z])(?=.*[A-Z]).{1,}" title="Start med stor og min. 1 bogstaver!">
+                <br><hr class="line">
+
+                <label>Hus nummer:</label>
+                <input style="float:right;" type="text" name="house_num" placeholder="01" pattern="((?=.*\d).{1,}}" title="Indtast min. 1 tal">
+                <br><hr class="line">
+
+                <label>By:</label>
+                <input style="float:right;" type="text" name="city" placeholder="Andeby" pattern="(?=.*[a-z])(?=.*[A-Z]).{2,}" title="Start med stor og min. 1 bogstaver!">
+                <br><hr class="line">
+
+                <label>Postnummer:</label>
+                <input style="float:right;" type="text" name="zip_code" placeholder="0101" pattern="((?=.*\d).{3,}}" title="Indtast min. 3 tal">
+                <br><hr class="line">
+
+                <input style="background-color: cyan; float: right;" type="submit" value="Opret kunden">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+
+</html>

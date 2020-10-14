@@ -1,0 +1,146 @@
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    background: rgb(195, 44, 35);
+    background: linear-gradient(0deg, rgba(62,195,34,1) 10%, rgba(23,157,242,1) 90%);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial;
+
+}
+/*Header*/
+.mar{
+    margin-left: 10%;
+}
+#top{
+    margin-left: 10%;
+    margin-bottom: -30px;
+}
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    display: inline-block;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 20%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px 20px;
+    height: auto;
+    width: 75.35%;
+    margin-left: 10%;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th{
+    background-color: #555;
+}
+td, th{
+    border: none;
+    text-align: left;
+    padding: 4px;
+}
+tr:nth-child(even){
+    background-color: #555;
+}
+
+.btn{
+    border: none;
+    color: white;
+    padding: 7px 10px;
+    text-align: center;
+}
+.btn:hover{
+    box-shadow: 2px 2px 2px yellow;
+}
+#btn-create{
+    background-color: greenyellow;
+}
+#btn-viewOne{
+    background-color: blue;
+}
+#btn-delete{
+    background-color: red;
+}
+#btn-update{
+    background-color: blueviolet;
+}
+
+/*Rental page section management*/
+.wrapper{
+    width: 1200px;
+    margin-left: 10%;
+    margin-top: 20%;
+}
+.left{
+    width: 20%;
+    float: left;
+    position: relative;
+    margin-left: 10%;
+}
+.right{
+    width: 20%;
+    float: left;
+    position: relative;
+    margin-left: 10%;
+}
+.content{
+    width: 1200px;
+    margin-left: 10%;
+}
+
+/*Navigation bars as lists for rental to choose customer and car*/
+ul{
+    list-style-type: none;
+    float: left;
+    margin: 20px;
+    padding: 0;
+    width: 200px;
+    overflow: scroll;
+    background-color: #f1f1f1;
+}
+
+li a{
+    display: block;
+    color: inherit;
+    background-color: transparent;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.li a:active {
+    transform: translateY(1px);
+    filter: saturate(150%);
+}
+
+.li a:hover,
+.li a:focus {
+    color: #f1f1f1;
+    border-color: currentColor;
+    background-color: #555;
+}
+
+#Rental {background-color: darkgreen;}
+#Cars {background-color: darkgreen;}
+#Customers {background-color: darkgreen;}
+#Staff {background-color: darkgreen;}

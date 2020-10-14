@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>OpdaterStaff</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+    <h1 style="margin-left: 40%; margin-top: 3%;">Opdater medarbejder</h1>
+    <div class="wrapper" id="wrapper-view">
+        <div class="content" id="content-create">
+
+            <form action="/updateStaffUp" method="post">
+
+        <h1>Opdater Staff</h1>
+            <hr class="line">
+
+            <input type="hidden" name="staff_id" th:value="${staff.staff_id}">
+
+            <label>Skift fornavn:</label>
+            <input style="float: right;" type="text" name="staff_first_name" th:value="${staff.staff_first_name}">
+            <br><hr class="line">
+
+            <label>Skift efternavn:</label>
+            <input style="float: right;" type="text" name="staff_last_name" th:value="${staff.staff_last_name}">
+            <br><hr class="line">
+
+        <h1>Opdater address</h1>
+            <hr class="line">
+
+            <label>Skift gade:</label>
+            <input style="float: right;" type="text" name="street" th:value="${staff.street}">
+            <br><hr class="line">
+
+            <label>Skift hus nummer:</label>
+            <input style="float: right;" type="text" name="house_num" th:value="${staff.house_num}">
+            <br><hr class="line">
+
+        <h1>Opdater lokation</h1>
+            <hr class="line">
+
+            <label>Skift by:</label>
+            <input style="float: right;" type="text" name="city" th:value="${staff.city}">
+            <br><hr class="line">
+
+            <label>Skift postnummer:</label>
+            <input style="float: right;" type="text" name="zip_code" th:value="${staff.zip_code}">
+            <br><hr class="line">
+
+            <input style="float: right;" type="submit" value="Gem ændringer">
+
+            <br><br>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

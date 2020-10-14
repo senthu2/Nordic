@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Bekr udlejning</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+    <h1 style="margin-left: 45%; margin-top: 3%;">CONFIRM</h1>
+
+    <div class="wrapper" id="wrapper-rental">
+        <div class="content" id="content-create">
+            <form action="/confirm" method="post">
+
+                <label>Pris-gruppe</label>
+
+                <br><hr class="line">
+
+                <label>Price id:</label>
+                <div style="float: right" th:text="${rental.price_id}"/>
+                <br>
+
+                <label>Total pris:</label>
+                <div style="float: right" th:text="${rental.total_price}"/> <!-- Totalpris medregnet drop point muligheder, ekstra betaling kan forkomme ved slut -->
+
+                <hr class="line">
+
+                <label>Her ses bilen</label>
+                <br><hr class="line">
+
+                <label>Dok id:</label>
+                <div style="float: right" th:text="${rental.documentation_id}"/><br>
+
+                <label>Brand:</label>
+                <div style="float: right" th:text="${car.brand}"/><br>
+
+                <label>Model:</label>
+                <div style="float: right" th:text="${car.model}"/><br>
+
+                <label>Antal senge:</label>
+                <div style="float: right" th:text="${car.beds}"/><br>
+
+                <label>Antal km kørt:</label>
+                <div style="float: right" th:text="${car.mileage}"/><br>
+
+                <label>Registration nr:</label>
+                <div style="float: right" th:text="${car.car_registration}"/><br>
+
+                <hr class="line">
+
+                <label>Her er kunden</label>
+                <br><hr class="line">
+
+                <label>Kunde ID:</label>
+                <div style="float: right" th:text="${rental.customer_id}"/><br>
+
+                <label>Fornavn:</label>
+                <div style="float: right" th:text="${customer.cus_first_name}"/><br>
+
+                <label>Efternavn:</label>
+                <div style="float: right" th:text="${customer.cus_last_name}"/><br>
+
+                <hr class="line">
+                <label>Her skal bilen afhentes af kunden:</label>
+                <div style="float: right" th:text="${pickUp.place}"/><br><br>
+
+                <label>Her skal kunden stille bilen <br>efter endt udlejning:</label>
+                <div style="float: right" th:text="${dropOf.place}"/><br>
+
+                <hr class="line">
+                <label>Udlejningsdetaljer:</label>
+                <div style="float: right" th:text="${rental.from_Date}"/><br>
+
+                <label>Udlejningen er aktiv fra d.:</label>
+                <div style="float: right" th:text="${rental.to_Date}"/>
+
+                <hr class="line">
+
+                <input type="submit" value="Bekræft udlejning">
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

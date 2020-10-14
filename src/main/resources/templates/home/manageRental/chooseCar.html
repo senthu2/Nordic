@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Vælg en motorhome-gruppe</title>
+    <link rel="stylesheet" type="text/css" href="/NMP.css">
+</head>
+
+<body>
+    <div class="wrapper" id="wrapper-chooseCar">
+
+        <div class="content" id="content-create">
+        <hr class="line">
+        <h1>Vælg en motorhome-gruppe</h1>
+
+        <br><hr class="line">
+
+        <form action="/chooseCar" method="post">
+        <p>Her kan du vælge motorhome-gruppe. <br>Gruppe 1 indeholder 2 senge <br>Gruppe 2 indeholder 4 senge<br>Gruppe 3 indeholder 6 senge</p>
+
+        <hr class="line">
+
+        <div th:each="pg: ${pgList}">
+        <input  type="radio" name="price_id" th:value="${pg.price_id}">
+        <label th:text="${pg.price_id}"/>
+        <br><hr class="line">
+
+        </div>
+            <input style="background-color: cyan" type="submit" value="Se detaljer om din udlejning">
+        </form>
+
+        <hr class="line">
+
+        <table>
+            <thead>
+            <tr>
+                <th>car_id</th>
+                <th>brand</th>
+                <th>model</th>
+                <th>beds</th>
+                <th>documentation_id</th>
+                <th>car_status</th>
+                <th>car_registration</th>
+                <th>mileage</th>
+                <th>price_id</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="c: ${carlist}">
+                <td th:text="${c.car_id}">
+                <td th:text="${c.brand}">
+                <td th:text="${c.model}">
+                <td th:text="${c.beds}">
+                <td th:text="${c.documentation_id}">
+                <td th:text="${c.car_status}">
+                <td th:text="${c.car_registration}">
+                <td th:text="${c.mileage}">
+                <td th:text="${c.price_id}">
+                <td>
+            </td>
+            </tr>
+            </tbody>
+        </table>
+
+        </div>
+    </div>
+</body>
+</html>
